@@ -31,11 +31,11 @@ function CommentCard({ comment }) {
 
       {isReplying && (
         <div className="pl-6 mt-2">
-          <ReplyForm onSubmit={(replyText) => setReplies([...replies, { user: 'You', avatar: 'avatar3.jpg', text: replyText, likes: 0 }])} />
+          <ReplyForm onSubmit={(replyText) => setReplies([...replies, { user: 'You', avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXtykLUFxXXxDr6hLBwypf2SIt2-Ji3Z9k3Es8Ueao-6T3GGdzz_WRfp6Vewzl-UZvixM&usqp=CAU', text: replyText, likes: 0 }])} />
         </div>
       )}
 
-      {replies.length > 0 && (
+      {replies?.length > 0 && (
         <div className="mt-2">
           {replies.map((reply, index) => (
             <CommentCard key={index} comment={reply} />
